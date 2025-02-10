@@ -1,0 +1,21 @@
+version: "2"
+sql:
+  - engine: "postgresql"
+    schema: 
+      - "schema/person.sql"
+    queries: 
+      - "queries/person.sql"
+    gen:
+      go:
+        package: "personsqlc"
+        out: "sqlc-generated/sqlc/person"
+
+  - engine: "postgresql"
+    schema: 
+      - "schema/account.sql"
+    queries: 
+      - "queries/account.sql"
+    gen:
+      go:
+        package: "accountsqlc"
+        out: "sqlc-generated/sqlc/account"
